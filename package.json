@@ -1,0 +1,23 @@
+{
+  "name": "bot_discord_maya",
+  "version": "1.0.0",
+  "description": "Bot_Discord_Maya",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mantra84/Bot_Discord_Maya.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mantra84/Bot_Discord_Maya/issues"
+  },
+  "homepage": "https://github.com/Mantra84/Bot_Discord_Maya#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  }
+}

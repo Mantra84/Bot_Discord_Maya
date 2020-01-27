@@ -1,0 +1,2 @@
+* gérer le planning des présence.
+* envoyé message quand des gens jouent.
