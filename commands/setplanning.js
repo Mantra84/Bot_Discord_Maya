@@ -5,7 +5,7 @@ module.exports = {
 	name: 'setplanning',
     description: 'definie son planning de présence',
     args: true,
-    usage: '[semaine], [lundi], [mardi], [mercredi], [jeudi], [vendredi], [sammedi], [dimanche] - Arg0[semaine]: C= semaine courante et N= semaine suivante. - Arg1-7[jours]: A = Absent, P = Present, N = ne sais pas',
+    usage: '[semaine], [lundi], [mardi], [mercredi], [jeudi], [vendredi], [samedi], [dimanche] - Arg0[semaine]: C= semaine courante et N= semaine suivante. - Arg1-7[jours]: A = Absent, P = Present, N = ne sais pas',
 	execute(message, args) {
 
         /* get the team role object */
@@ -55,8 +55,9 @@ module.exports = {
             let contents = fs.readFileSync("data/"+ message.author.id + ".json");
             // Define to JSON type
             player = JSON.parse(contents);
-            player.name = message.author.tag;
+            player.name = message.author.username;
 
+            /* current or  next week */
             if(args[0].toLowerCase() == 'c')
             {
                 player.curWeekUpdated = true;

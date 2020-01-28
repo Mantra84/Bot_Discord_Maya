@@ -34,9 +34,9 @@ module.exports = {
 
             /* print the message with planning sumury */
             data.push(`Voici ton planning ${player.name} : \n`);
-            data.push(`Semaine courante (M.a.j : ${player.curWeekUpdated})\n`);
+            data.push(`Semaine courante (M.a.j : ${player.curWeekUpdated})`);
             data.push(`lundi: ${player.curWeek[0]}, mardi: ${player.curWeek[1]}, mercredi: ${player.curWeek[2]}, jeudi: ${player.curWeek[3]}, vendredi: ${player.curWeek[4]}, samedi: ${player.curWeek[5]}, dimanche: ${player.curWeek[6]},\n`);
-            data.push(`Semaine suivante : (M.a.j ${player.nextWeekUpdated})\n`);
+            data.push(`Semaine suivante : (M.a.j ${player.nextWeekUpdated})`);
             data.push(`lundi: ${player.nextWeek[0]}, mardi: ${player.nextWeek[1]}, mercredi: ${player.nextWeek[2]}, jeudi: ${player.nextWeek[3]}, vendredi: ${player.nextWeek[4]}, samedi: ${player.nextWeek[5]}, dimanche: ${player.nextWeek[6]},\n`);
 
             message.author.send(data, { split: true });
