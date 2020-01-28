@@ -1,7 +1,7 @@
 /* Require */
 const fs = require("fs");
 const Discord = require('discord.js');
-const { prefix, token } = require('./config.json');   
+const { prefix, token, serverName, teamName } = require('./config.json');   
 
 /* loading Client */
 const client = new Discord.Client();
@@ -17,8 +17,14 @@ for (const file of commandFiles) {
 	client.commands.set(command.name, command);
 }
 
+var team = {};
+
 /* When ready */
 client.on('ready', () => {
+    
+    /* get the team role object */
+    team = client.guilds.find(val => val.name === `${serverName}`).roles.find(val => val.name === `${teamName}`);
+
     console.log(`Logged in as ${client.user.tag}!`);
 });
 
@@ -41,6 +47,9 @@ client.on('message', message => {
 
     /* get the command associated with the key commandName */
     const command = client.commands.get(commandName);
+
+    /* check if the author have the right to use team reserved command */
+    if(command.team && !team.members.has(message.author.id)) return message.reply(`tu ne fais pas partie de la team \"${teamName}\" ${message.author.tag}, tu ne peux donc pas utiliser la commande ${commandName}`);
 
     /* check if argument are needed */
     if (command.args && !args.length) {

@@ -5,7 +5,7 @@ module.exports = {
 	description: 'liste de toutes les commandes ou informations a-propos de la command spécifié.',
     usage: '[nom de la commande]',
     args: false, //with and without arg
-	cooldown: 5,
+    team: false,
 	execute(message, args) {
 		const data = [];
         const { commands } = message.client; //access client object throught message
@@ -41,8 +41,7 @@ module.exports = {
         
         if (command.description) data.push(`**Description:** ${command.description}`);
         if (command.usage) data.push(`**Usage:** ${prefix}${command.name} ${command.usage}`);
-        
-        data.push(`**Cooldown:** ${command.cooldown || 3} second(s)`);
+        if (command.team) data.push(`**Usa restreint a la team \"${config.teamName}\"**`);
         
         message.author.send(data, { split: true });
 	},

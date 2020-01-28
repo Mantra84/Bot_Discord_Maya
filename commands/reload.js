@@ -2,6 +2,7 @@ module.exports = {
 	name: 'reload',
     description: 'recharge les commandes',
     args: true,
+    team: true,
     usage: '[nom de la commande]',
 	execute(message, args) {
         /* get commandeName then commandeObject */
