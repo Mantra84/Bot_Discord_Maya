@@ -20,7 +20,7 @@ module.exports = {
             /* check if DM are allowed */
             .then(() => {
                 if (message.channel.type === 'dm') return;
-                message.reply('Je vous ai envoyé un DM avec tout mes commandes!');
+                message.reply('Je vous ai envoyé un DM avec toutes mes commandes!');
             })
             .catch(error => {
                 console.error(`Je n'ai pas pu envoyer un DM à ${message.author.tag}.\n`, error);
